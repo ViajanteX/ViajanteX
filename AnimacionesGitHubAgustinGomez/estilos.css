@@ -1,0 +1,209 @@
+*{
+    border: 0;
+    padding: 0;
+}
+/* HEADER DE ALL PAGES */
+.Header { text-align: center;
+   padding-bottom: 3px;
+    padding-top: 20px;
+    background-color: crimson;
+    
+}
+.Header__title{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding-bottom: 10px;
+}
+.Footer {
+    background-color: gray;
+    display: flex;
+    flex-direction:column;
+    text-align: center;
+}
+.Centrarimg{
+    display: block;
+    margin: auto;
+}
+nav{
+    background-color: grey;
+   }
+ul{
+    list-style: none;
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
+    font-size: 0;
+  
+}
+ul a {
+  
+        font-size: 25px;
+        text-decoration: none;
+        color:whitesmoke;
+        margin-left: 70px;
+    }
+    ul li {
+        display: inline-block;
+        position: relative;
+    }
+    ul ul {
+        position: absolute;
+        display: none;
+    }
+    ul ul li {
+        display:block;
+    }
+    ul li:hover ul {
+        display: block;
+    }
+    /* FIN HEADER PAGES */
+    /* ESTILOS INDEX */
+    .H2Index{
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: xx-large;
+    }
+    .vinetaIndex{
+        border-style: double ;
+        border-width: 3px;
+        font-size:x-large;
+    }
+    .ImgsIndex {
+        display: flex;
+        align-items:center ;
+        justify-content: space-around;
+    }
+    .TextNegritaIndex{
+        font-weight: bold;
+        padding-top: 20px;
+        padding-bottom: 20px
+        ;}
+    .Espaciado{
+            margin-top: 30px ;
+            margin-bottom: 30px;
+        }
+    
+    /* ANIMACIONES */
+    .tracking-in-expand-fwd-top {
+        animation: tracking-in-expand-fwd-top 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) alternate both;
+    }
+    @keyframes tracking-in-expand-fwd-top {
+        0% {
+          letter-spacing: -0.5em;
+          transform: translateZ(-700px) translateY(-500px);
+          opacity: 0;
+        }
+        40% {
+          opacity: 0.6;
+        }
+        100% {
+          transform: translateZ(0) translateY(0);
+          opacity: 1;
+        }
+      }
+      .kenburns-right {
+        animation: kenburns-right 5s ease-out both;
+    }
+@keyframes kenburns-right {
+    0% {
+      transform: scale(1) translate(0, 0);
+      transform-origin: 84% 50%;
+    }
+    100% {
+      transform: scale(1.25) translateX(20px);
+      transform-origin: right;
+    }
+  }
+  .text-pop-up-top {
+	animation: text-pop-up-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 500ms both;
+}
+ @keyframes text-pop-up-top {
+    0% {
+      transform: translateY(0);
+      transform-origin: 50% 50%;
+      text-shadow: none;
+    }
+    100% {
+      transform: translateY(-50px);
+      transform-origin: 50% 50%;
+      text-shadow: 0 1px 0 #cccccc, 0 2px 0 #cccccc, 0 3px 0 #cccccc, 0 4px 0 #cccccc, 0 5px 0 #cccccc, 0 6px 0 #cccccc, 0 7px 0 #cccccc, 0 8px 0 #cccccc, 0 9px 0 #cccccc, 0 50px 30px rgba(0, 0, 0, 0.3);
+    }
+  }
+  .color-change-2x {
+	animation: color-change-2x 2s linear infinite alternate both;
+}
+ @keyframes color-change-2x {
+    0% {
+      background: #19dcea;
+    }
+    100% {
+      background: #b22cff;
+    }
+  }
+  .focus-in-contract-bck {
+	animation: focus-in-contract-bck 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+ @keyframes focus-in-contract-bck {
+    0% {
+      letter-spacing: 1em;
+      transform: translateZ(300px);
+      filter: blur(12px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateZ(12px);
+      filter: blur(0);
+      opacity: 1;
+    }
+  }
+   /*FIN ANIMACIONES*/
+/*FIN  ESTILOS INDEX */
+/*GRIDS AND MEDIA*/
+.Header {
+    grid-area: Header;
+}
+.Main {
+    grid-area: Main;
+}
+.Iframe {
+    grid-area: Iframe;
+}
+.Footer{
+    grid-area: Footer;
+}
+.GridContainer {
+    grid-area: GridContainer;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(4,auto);
+    grid-template-areas:
+    "Header Header Header"
+    "Iframe Iframe Iframe"
+    "Main Main Main"
+    "Footer Footer Footer"
+  ;
+}
+@media screen and (max-widht: 900px){
+.GridContainer{
+    grid-template-columns: repeat(2,auto);
+    grid-template-rows: repeat(4,auto);
+    grid-template-areas: 
+"Header Header"
+"Iframe  Iframe"
+"Main Main"
+"Footer Footer";
+}
+}
+@media screen and (max-widht:600px){
+    .GridContainer{
+        grid-template-columns: 1;
+        grid-template-rows: repeat(4,auto);
+        grid-template-areas:
+        "Header"
+        "Iframe"
+        "Main"
+        "Footer";
+    }
+} 
+/*FIN GRIDS AND MEDIA */
